@@ -2,7 +2,7 @@ class Article < ApplicationRecord
     include Visible 
     
     #* relationship
-    has_many :comments 
+    has_many :comments, dependent: :destroy
 
     #^ validation
     validates :title, presence: true

@@ -3,7 +3,7 @@
 Our blog has <%= Article.public_count %> articles and counting
 
 <% @articles.each do |article| %>
-    <%= unless article.archived? %>
+    <% unless article.archived? %>
         <h3><%= article.title %></h3>
         <button>
             <a href="<%= article_path(article) %>">Learn More</a>
@@ -18,4 +18,5 @@ Our blog has <%= Article.public_count %> articles and counting
 <br>
 <br>
 <br>
+
 <%= link_to "create new article", new_article_path %>
